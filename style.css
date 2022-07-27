@@ -1,0 +1,134 @@
+body{
+  margin: 0;
+}
+.line,
+.bg-c1{
+  background: #333333;
+}
+.bg-c2 {
+  background: #2F454E;
+}
+.bg-c3{
+  background: #2B8EAD;
+}
+.bg-c4{
+  background: #6F98A8;
+}
+.bg-c5 {
+  background: #BFBFBF;
+}
+.my-0{
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.btn,
+.txt-c6{
+  background-color: #72C3DC;
+}
+.text-center{
+  text-align: center;
+}
+.title{
+  font-size: 1.2em;
+  padding: 30px 0 4px;
+  margin: 0;
+}
+.line{  
+  height: 4px;
+  opacity: 0.6;
+}
+.d-flex{
+  display: flex;
+}
+.box-btn{
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.box-list {
+  overflow: hidden;
+  min-height: 170px;
+  max-width: 688px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+  padding: 0.4em 0.9em;
+  margin: 0px -3px;
+  font-size: 6em;
+  display: inline-block;
+  color: #ffffff;
+  font-weight: 100;
+}
+
+.btn {
+  display: block;
+  width: 240px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 25px 22px 0 10px;
+  border: 1px solid #72C3DC;
+  border-radius: 5px;
+  box-shadow: 0px 5px 0px #477B8B;
+  transition: All 200ms ease;
+  padding: 0.8em 2em;
+}
+@media screen and (max-width:659px) {
+  header{
+    background-color: #333333;
+  }
+  .sec-box{
+    background-color: #fff;
+  }
+  .title{
+    color: #fff;
+  }
+  .flex-sm-column{
+    flex-direction: column;
+  }
+  .box-list{
+    order: 2;
+    margin-top: 20px;
+  }
+  .box-btn{
+    order: 1;
+    margin-top: 20px;
+    display: flex;
+  }
+  .btn{
+    padding: 6px 10px;
+    width: auto;
+  }
+  ul li {
+    padding: 0;
+    width: 80%;
+    margin-left: 10%;
+    font-size: 27px;
+    background: #EFEFEF !important;
+    margin-bottom: 4px;
+    text-align: center;
+    color: #000;
+    border-left-width: 6px;
+    border-left-style: solid ;
+}
+
+  .b-c1{
+    border-color: #333333;
+  }
+  .b-c2 {
+    border-color: #2F454E;
+  }
+  .b-c3{
+    border-color: #2B8EAD;
+  }
+  .b-c4{
+    border-color: #6F98A8;
+  }
+  .b-c5 {
+    border-color: #BFBFBF;
+  }
+}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> UI Design</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+   <header>
+    <h4 class="text-center title">Shuffle and Sort</h4>
+    <div class="line"></div>
+   </header>
+    <section class="sec-box">
+      <div class="d-flex flex-sm-column">
+        <div class="box-list">
+          <ul class="shuffle-sort-box" id="shuffle-sort-box">
+            <li class="b-c4 bg-c4">1</li>
+            <li class="b-c3 bg-c3">2</li>
+            <li class="b-c2 bg-c2">3</li>
+            <li class="b-c3 bg-c3">4</li>
+            <li class="b-c2 bg-c2">5</li>
+            <li class="b-c5 bg-c5">6</li>
+            <li class="b-c5 bg-c5">7</li>
+            <li class="b-c4 bg-c4">8</li>
+            <li class="b-c2 bg-c2">9</li>
+          </ul>
+          <div><p class="text-center my-0"><i>Shuffle and sort by kumarswamy </i></p></div>
+        </div>
+        <div class="text-center box-btn">
+          <button type="button" onclick="shuffleNodes()" class="btn">Shuffle</button>
+          <button type="button" onclick="sortNodes()" class="btn " >Sort</button>
+        </div>
+      </div>
+    </section>
+    <script>
+      var list = document.getElementById("shuffle-sort-box");
+      function sortNodes() {
+        var items = list.childNodes;
+        var itemsArr = [];
+        for (var i in items) {
+            if (items[i].nodeType == 1) { 
+                itemsArr.push(items[i]);
+            }
+        }
+
+        itemsArr.sort(function(a, b) {
+          return a.innerHTML == b.innerHTML
+                  ? 0
+                  : (a.innerHTML > b.innerHTML ? 1 : -1);
+        });
+
+        for (i = 0; i < itemsArr.length; ++i) {
+          list.appendChild(itemsArr[i]);
+        }
+      }
+      function shuffle(items){
+        var cached = items.slice(0), temp, i = cached.length, rand;
+        while(--i)
+        {
+            rand = Math.floor(i * Math.random());
+            temp = cached[rand];
+            cached[rand] = cached[i];
+            cached[i] = temp;
+        }
+        return cached;
+      }
+      function shuffleNodes(){
+          var nodes = list.children, i = 0;
+          nodes = Array.prototype.slice.call(nodes);
+          nodes = shuffle(nodes);
+          while(i < nodes.length)
+          {
+              list.appendChild(nodes[i]);
+              ++i;
+          }
+      } 
+    </script>
+  </body>
+</html>

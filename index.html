@@ -34,30 +34,34 @@
       </div>
     </section>
     <script>
+      // Get element from DOM(Document Object Model) by using element id.
       var list = document.getElementById("shuffle-sort-box");
+
       function sortNodes() {
+        // Get the all child elements by using childNodes property.
         var items = list.childNodes;
         var itemsArr = [];
+        // In child nodes check for element(nodeType), if element is found push into array variable(itemsArr variable) else skip.
         for (var i in items) {
             if (items[i].nodeType == 1) { 
                 itemsArr.push(items[i]);
             }
         }
-
+        // Sort array element by using compare function with in sort method.
         itemsArr.sort(function(a, b) {
           return a.innerHTML == b.innerHTML
                   ? 0
                   : (a.innerHTML > b.innerHTML ? 1 : -1);
         });
-
+        // Append all child elements to parent element by using appendChild() method.
         for (i = 0; i < itemsArr.length; ++i) {
           list.appendChild(itemsArr[i]);
         }
       }
       function shuffle(items){
         var cached = items.slice(0), temp, i = cached.length, rand;
-        while(--i)
-        {
+        // Generate random numbers and exchange the element by using random numbers.
+        while(--i){
             rand = Math.floor(i * Math.random());
             temp = cached[rand];
             cached[rand] = cached[i];
@@ -66,14 +70,17 @@
         return cached;
       }
       function shuffleNodes(){
-          var nodes = list.children, i = 0;
-          nodes = Array.prototype.slice.call(nodes);
-          nodes = shuffle(nodes);
-          while(i < nodes.length)
-          {
-              list.appendChild(nodes[i]);
-              ++i;
-          }
+        // Get the all child elements by using childNodes property.
+        var nodes = list.children;
+        var i = 0;
+        nodes = Array.prototype.slice.call(nodes);
+        nodes = shuffle(nodes);
+        // Append all child elements to parent element by using appendChild() method.
+        while(i < nodes.length)
+        {
+            list.appendChild(nodes[i]);
+            ++i;
+        }
       } 
     </script>
   </body>
